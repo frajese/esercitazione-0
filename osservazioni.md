@@ -26,6 +26,7 @@ Output richiesto e comportamento del programma prima della modifica:
 prima della modifica gran parte del codice rimane commentato, quindi il codice compila ma non stampa nulla.
 
 Esito dopo la modifica e spiegazione della correzione:
+Dopo aver completato il TODO in hello.c, ho inserito la stampa del messaggio Hello, computational physics! seguito da una nuova riga, usando printf. Ho poi ricompilato il programma ed eseguito ./hello, verificando che l'output fosse esattamente quello richiesto, ossia  "Hello, computational physics!".
 
 
 Risposta alle domande stimolo:
