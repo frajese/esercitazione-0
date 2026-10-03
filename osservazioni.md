@@ -27,7 +27,7 @@ Esito dopo la modifica e spiegazione della correzione:
 Dopo aver completato il TODO in hello.c, ho inserito la stampa del messaggio Hello, computational physics! seguito da una nuova riga, usando printf. Ho poi ricompilato il programma ed eseguito ./hello, verificando che l'output fosse esattamente quello richiesto, ossia  "Hello, computational physics!".
 
 
-Risposta alle domande stimolo:
+Risposta alle domande stimolo:  
 Dopo aver completato la stampa, Il fatto che il programma compili basta a garantire che faccia ciò che è richiesto?
 No, il fatto che il programma compili non basta a garantire che faccia ciò che è richiesto. Compilare significa che il codice C è sintatticamente corretto e il compilatore riesce a trasformarlo in un eseguibile.
 Eseguire e controllare l'output significa verificare che il programma faccia effettivamente ciò che la traccia richiede.
