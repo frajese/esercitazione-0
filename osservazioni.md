@@ -4,7 +4,7 @@ Gruppo:47
 
 Componenti (Veronica Dina Frajese, username:Frajese; Gaia Fioravanti, username:Gaia-06);
 
-URL del repository condiviso:https://github.com/Gaia-06/esercitazione-0-privata.git
+URL del repository condiviso: https://github.com/frajese/esercitazione-0 
 
 Chi ha usato la tastiera nello step 1 e nello step 2: :D
 
