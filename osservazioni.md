@@ -37,6 +37,12 @@ Che cosa cambia quando ricompili? Il compilatore legge il sorgente modificato e 
 
 Come puoi distinguere ciò che stampa il programma da ciò che mostra il terminale? Ciò che stampa il programma è il suo output; il terminale può mostrare anche comandi ed eventuali messaggi di errore. Con > output.txt, l'output normale del programma viene salvato nel file output.txt invece di essere visualizzato sul terminale
 
+Differenza fra salvare, commit e push: salvare modifica il file sul computer; git commit registra le modifiche come una nuova versione nella cronologia locale; git push invia quella versione al repository su GitHub.
+
+Cosa mostra git diff e quali file servono: git diff mostra le modifiche fatte ai file ma non ancora preparate per il commit. Per ricompilare il programma servono i file sorgente, quindi hello.c (e il Makefile fornito dall'esercitazione, se si usa make).
+
+Come verificare la versione su GitHub: dopo git push, confronto l'ultimo commit mostrato da git log --oneline -5 con quello presente nella cronologia su GitHub e controllo che i file contengano le modifiche che ho provato.
+
 ## Step 1 — Git
 
 Quali file ho incluso nel commit e perché: Ho incluso il file sorgente hello.c, perché contiene il codice necessario per ricompilare il programma e osservazioni.md
