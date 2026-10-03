@@ -28,37 +28,80 @@ Dopo aver completato il TODO in hello.c, ho inserito la stampa del messaggio Hel
 
 
 Risposta alle domande stimolo:  
-Dopo aver completato la stampa, Il fatto che il programma compili basta a garantire che faccia ciò che è richiesto?
+
+
+Dopo aver completato la stampa, Il fatto che il programma compili basta a garantire che faccia ciò che è richiesto?  
 No, il fatto che il programma compili non basta a garantire che faccia ciò che è richiesto. Compilare significa che il codice C è sintatticamente corretto e il compilatore riesce a trasformarlo in un eseguibile.
 Eseguire e controllare l'output significa verificare che il programma faccia effettivamente ciò che la traccia richiede.
 
-La differenza tra hello.c e hello: hello.c è il codice sorgente, mentre hello è il programma eseguibile. Se modifico hello.c e avvio subito hello senza ricompilare, uso ancora la vecchia versione.
+Che differenza c'è tra hello.c e hello? Se modifichi il messaggio nel sorgente e avvii subito l'eseguibile, quale versione stai usando?   
+hello.c è il codice sorgente, mentre hello è il programma eseguibile. Se modifico hello.c e avvio subito hello senza ricompilare, uso ancora la vecchia versione.
 
-Che cosa cambia quando ricompili? Il compilatore legge il sorgente modificato e crea un nuovo eseguibile, che contiene le ultime modifiche.
+Che cosa cambia quando ricompili?   
+Il compilatore legge il sorgente modificato e crea un nuovo eseguibile, che contiene le ultime modifiche.
 
-Come puoi distinguere ciò che stampa il programma da ciò che mostra il terminale? Ciò che stampa il programma è il suo output; il terminale può mostrare anche comandi ed eventuali messaggi di errore. Con > output.txt, l'output normale del programma viene salvato nel file output.txt invece di essere visualizzato sul terminale
-
-Differenza fra salvare, commit e push: salvare modifica il file sul computer; git commit registra le modifiche come una nuova versione nella cronologia locale; git push invia quella versione al repository su GitHub.
-
-Cosa mostra git diff e quali file servono: git diff mostra le modifiche fatte ai file ma non ancora preparate per il commit. Per ricompilare il programma servono i file sorgente, quindi hello.c (e il Makefile fornito dall'esercitazione, se si usa make).
-
-Come verificare la versione su GitHub: dopo git push, confronto l'ultimo commit mostrato da git log --oneline -5 con quello presente nella cronologia su GitHub e controllo che i file contengano le modifiche che ho provato.
+Come puoi distinguere ciò che stampa il programma da ciò che mostra il terminale?Che cosa osservi se esegui aggiungendo > output.txt?  
+Si può distinguere l'output del programma da ciò che mostra il terminale osservando ciò che viene stampato dal programma rispetto al prompt e agli altri messaggi della shell, con > output.txt, l'output standard del programma viene reindirizzato nel file output.txt e non viene mostrato sul terminale.
 
 ## Step 1 — Git
 
-Quali file ho incluso nel commit e perché: Ho incluso il file sorgente hello.c, perché contiene il codice necessario per ricompilare il programma e osservazioni.md
+Che differenza c'è fra salvare un file, creare un commit e fare push?   
+Salvare modifica il file sul computer; git commit registra le modifiche come una nuova versione nella cronologia locale; git push invia quella versione al repository su GitHub.
 
-Come ho verificato che la versione provata sia presente su GitHub: Dopo git push ho controllato su GitHub che il file modificato e il relativo commit fossero presenti.
+Quali modifiche mostra git diff? Quali file occorrono a un compagno per ricompilare il programma sul proprio computer?  
+Git diff mostra le modifiche fatte ai file ma non ancora preparate per il commit. Per ricompilare il programma servono i file sorgente, quindi hello.c (e il Makefile fornito dall'esercitazione, se si usa make).
 
-Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
-dopo "git pull" osservazioni.md viene aggiornato sul locale con la modifica eseguita online su Github;
-non serve un nuovo clone perché utilizzo il comando pull per aggiornare il locale, non ho bisogno di clonare di nuovo tutti i file che avevo già scaricato.
+Come puoi verificare che su GitHub ci sia proprio la versione provata?  
+Dopo git push, confronto l'ultimo commit mostrato da git log --oneline -5 con quello presente nella cronologia su GitHub e controllo che i file contengano le modifiche che ho apportato.
+
+Perché non è necessario eseguire di nuovo git clone?  
+Non è necessario eseguire di nuovo `git clone` perché la copia locale del repository esiste già. `git pull` aggiorna quella copia locale scaricando dal repository remoto i nuovi commit e integrandoli nella cronologia.
+
+Quali file ho incluso nel commit e perché?  
+Ho incluso il file sorgente hello.c, perché contiene il codice necessario per ricompilare il programma e osservazioni.md
+
+Come ho verificato che la versione provata sia presente su GitHub?  
+Dopo git push ho controllato su GitHub che il file modificato e il relativo commit fossero presenti.
+
+Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:  
+Dopo "git pull" il file viene aggiornato sul locale con la modifica eseguita online su Github.
 
 ## Step 2 — Eco: prima prova
 
-Argomenti passati, comando e risultato:
+Argomenti passati: `ciao 12 3.5`
+Comando: `./eco ciao 12 3.5`
+Risultato: `ciao 12 3.500000`
 
-Che cosa posso concludere:
+Che cosa posso concludere: gli argomenti vengono passati al programma come testo e quelli numerici vengono convertiti nel tipo di dato richiesto prima di essere stampati.
+
+
+Domande stimolo:
+
+Gli elementi di argv sono già numeri? Che differenza ti aspetti passando 0012 come primo oppure come secondo argomento?   
+No, gli elementi di `argv` sono stringhe e hanno bisogno di essere convertiti in interi e decimali. Se passiamo `0012` come primo argomento stampa il numero così come è perché viene salvato tutto in una stringa così come è, passandolo come secondo argomento invece viene stampato solo il numero `12` perché viene convertito in un intero.
+
+Come puoi passare un testo che contiene spazi mantenendolo come un solo argomento?
+Scrivendo tutta la parte di testo tra virgolette.
+
+Se scrivi 1.25e1 come terzo argomento, quale valore ti aspetti in uscita? La rappresentazione scritta sulla riga di comando deve rimanere uguale?  
+Viene convertito nel valore `12.5`, quindi la scrittura cambia perché il valore viene convertito in un `double` e poi stampato con sei cifre dopo il punto decimale.
+
+Se un argomento manca o non rappresenta il tipo richiesto (ad esempio una stringa invece di un numero), che cosa ti aspetti dal programma?  
+Se manca un argomento, il programma stampa il messaggio di errore previsto dal codice. Se si utilizza un numero al posto del testo, viene stampato così come è. Se si inserisce del testo al posto di un numero, il programma segnala un errore. Se si mette un decimale al posto di un intero, la conversione dipende da come è definita la funzione di conversione; con le funzioni fornite dalla traccia, gli argomenti non validi vengono riconosciuti come errori. Se si mette un intero al posto del decimale, viene letto come valore reale e stampato con sei zeri dopo il punto.
+
+Come distingui il risultato da un messaggio di errore?
+Si può distinguere osservando dove viene stampato: il risultato viene inviato a `stdout`, mentre il messaggio di errore viene inviato a `stderr`. Con `>` viene reindirizzato solo `stdout`, quindi il risultato finisce nel file mentre il messaggio di errore rimane nel terminale.
+
+
+Nello step 2, oltre alle prove proposte, individua argc e argv in eco.c: perché il programma richiede argc == 4 pur ricevendo tre argomenti? Che cosa contiene argv[0]?    
+Il programma richiede `argc == 4` perché `argc` conta anche il nome del programma, oltre ai tre argomenti passati. `argv[0]` contiene quindi il nome o il percorso con cui è stato eseguito il programma, mentre `argv[1]`, `argv[2]` e `argv[3]` contengono i tre argomenti forniti dall'utente.
+
+
+Che cosa contiene eco.txt nei due casi?
+Perché nel secondo caso il messaggio d'errore compare ancora nel terminale? Individua nel sorgente le stampe su stdout e su stderr. Cosa viene rediretto da >?
+Quali codici di uscita osservi? Come potresti usarli in un controllo automatico?
+
+
 
 ## Step 2 — Eco: seconda prova
 
