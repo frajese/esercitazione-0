@@ -28,6 +28,7 @@ Esito dopo la modifica e spiegazione della correzione:
 
 
 Risposta alle domande stimolo:
+
 La differenza tra hello.c e hello: hello.c è il codice sorgente, mentre hello è il programma eseguibile. Se modifico hello.c e avvio subito hello senza ricompilare, uso ancora la vecchia versione.
 
 Che cosa cambia quando ricompili? Il compilatore legge il sorgente modificato e crea un nuovo eseguibile, che contiene le ultime modifiche.
