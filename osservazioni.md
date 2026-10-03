@@ -27,6 +27,13 @@ Output richiesto e comportamento del programma prima della modifica:
 Esito dopo la modifica e spiegazione della correzione:
 
 
+Risposta alle domande stimolo:
+La differenza tra hello.c e hello: hello.c è il codice sorgente, mentre hello è il programma eseguibile. Se modifico hello.c e avvio subito hello senza ricompilare, uso ancora la vecchia versione.
+
+Che cosa cambia quando ricompili? Il compilatore legge il sorgente modificato e crea un nuovo eseguibile, che contiene le ultime modifiche.
+
+Come puoi distinguere ciò che stampa il programma da ciò che mostra il terminale? Ciò che stampa il programma è il suo output; il terminale può mostrare anche comandi ed eventuali messaggi di errore. Con > output.txt, l'output normale del programma viene salvato nel file output.txt invece di essere visualizzato sul terminale
+
 ## Step 1 — Git
 
 Quali file ho incluso nel commit e perché: Ho incluso il file sorgente hello.c, perché contiene il codice necessario per ricompilare il programma e osservazioni.md
