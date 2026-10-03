@@ -63,11 +63,13 @@ int main(int argc, char *argv[])
     }
 
     char *testo = argv[1];
+    int intero = leggi_intero(argv[2]);
+    double reale = leggi_reale(argv[3]);
 
     /* TODO: converti gli argomenti in tipi appropriati. */
 
     /* Evita una segnalazione finche' testo non viene usato nella stampa. */
-    (void)testo;
+    printf("%s %d %.6f\n", testo, intero, reale);
 
     /* TODO: scrivi una sola chiamata a printf che stampi testo, intero e reale,
      * separati da uno spazio e seguiti da un carattere di nuova riga. */
