@@ -104,10 +104,17 @@ Quali codici di uscita osservi? Come potresti usarli in un controllo automatico?
 
 
 ## Step 2 — Eco: seconda prova
-
-Argomenti passati, comando e risultato:
-
+Argomenti: `ciao 12 3.4` — comando: `./eco ciao 12 3.4` — risultato: `ciao 12 3.400000`.
+Argomenti: `ciao dodici 3.4` — comando: `./eco ciao dodici 3.4` — risultato: `ciao 0 3.400000`.
 Che cosa ho capito su testo, conversioni e stampa:
+Gli argomenti di `argv` sono stringhe. I valori numerici devono essere convertiti nel tipo corretto prima di essere utilizzati e stampati. La stampa può quindi avere una rappresentazione diversa da quella inserita inizialmente.
+
+1. Che cosa contiene eco.txt nei due casi?  
+Nel primo caso, eseguendo ./eco ciao 12 3.5 > eco.txt, il file contiene ciao 12 3.500000, perché gli argomenti numerici vengono convertiti correttamente.
+Nel secondo caso, eseguendo ./eco ciao dodici 3.5 > eco.txt, il file contiene ciao 0 3.500000, perché la funzione atoi() cerca di convertire la stringa "dodici" in un numero intero, ma non trovando cifre iniziali restituisce 0. Il programma continua quindi l'esecuzione e stampa comunque il risultato. Inoltre, il simbolo > sostituisce il contenuto precedente del file con il nuovo output.
+
+2. Quali codici di uscita osservi? Come potresti usarli in un controllo automatico?   
+Nel primo caso il codice di uscita è 0, che indica il completamento regolare. Nel secondo caso è 0 anche se l'argomento è errato, perché il programma usa atoi(), che converte il testo non numerico in 0 senza segnalare un errore. Per riconoscere automaticamente gli errori, bisognerebbe usare una funzione di conversione che controlli la validità dell'argomento e restituisca un codice diverso da 0 in caso di errore.
 
 ## Step 2 — Risultato ed errori
 
