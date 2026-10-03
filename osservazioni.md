@@ -118,6 +118,9 @@ Nel primo caso il codice di uscita è 0, che indica il completamento regolare. N
 
 ## Step 2 — Risultato ed errori
 
+Eseguire il programma cambiando il terzo argomento:
+Non è necessario ricompilare se si cambia solo il valore del parametro passato al programma, perché il codice non viene modificato. Per cambiare la formula usata dal programma, invece, bisogna modificare il codice sorgente e quindi ricompilare.
+
 Previsioni per l'esecuzione con argomenti validi e per quella con `dodici`:
 
 Contenuto di `eco.txt`, messaggi nel terminale e codici di uscita osservati:
