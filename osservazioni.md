@@ -22,7 +22,8 @@ ha stampato "Hello, computational physics!"
 Che cosa ho capito su sorgente ed eseguibile:
 sorgente è il file di testo che io scrivo su emacs, l'eseguibile viene creato con il compilatore e se eseguito permette di controllare il funzionamento del codice.
 
-Output richiesto e comportamento del programma prima della modifica: 
+Output richiesto e comportamento del programma prima della modifica:
+prima della modifica gran parte del codice rimane commentato, quindi il codice compila ma non stampa nulla.
 
 Esito dopo la modifica e spiegazione della correzione:
 
