@@ -13,11 +13,16 @@ saper spiegare le prove svolte.
 
 ## Step 1 — Hello World: compilazione ed esecuzione
 
-Comando di compilazione:printf("Hello, world!")
+Comando di compilazione:
+printf("Hello world!")
 
 Comando di esecuzione e risultato osservato:
+make hello
+./hello
+ha stampato Hello world!
 
 Che cosa ho capito su sorgente ed eseguibile:
+sorgente è il file di testo che io scrivo su emacs, l'eseguibile viene creato con il compilatore e se eseguito permette di controllare il funzionamento del codice
 
 Output richiesto e comportamento del programma prima della modifica:
 
