@@ -13,26 +13,25 @@ saper spiegare le prove svolte.
 
 ## Step 1 — Hello World: compilazione ed esecuzione
 
-Comando di compilazione:
-printf("Hello world!")
+Comando di compilazione: Make
 
 Comando di esecuzione e risultato osservato:
-make hello
 ./hello
-ha stampato Hello world!
+ha stampato "Hello, computational physics!"
 
 Che cosa ho capito su sorgente ed eseguibile:
-sorgente è il file di testo che io scrivo su emacs, l'eseguibile viene creato con il compilatore e se eseguito permette di controllare il funzionamento del codice
+sorgente è il file di testo che io scrivo su emacs, l'eseguibile viene creato con il compilatore e se eseguito permette di controllare il funzionamento del codice.
 
-Output richiesto e comportamento del programma prima della modifica:
+Output richiesto e comportamento del programma prima della modifica: 
 
 Esito dopo la modifica e spiegazione della correzione:
 
+
 ## Step 1 — Git
 
-Quali file ho incluso nel commit e perché:
+Quali file ho incluso nel commit e perché: Ho incluso il file sorgente hello.c, perché contiene il codice necessario per ricompilare il programma e osservazioni.md
 
-Come ho verificato che la versione provata sia presente su GitHub:
+Come ho verificato che la versione provata sia presente su GitHub: Dopo git push ho controllato su GitHub che il file modificato e il relativo commit fossero presenti.
 
 Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
 
