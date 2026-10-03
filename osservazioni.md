@@ -34,6 +34,8 @@ Quali file ho incluso nel commit e perché: Ho incluso il file sorgente hello.c,
 Come ho verificato che la versione provata sia presente su GitHub: Dopo git push ho controllato su GitHub che il file modificato e il relativo commit fossero presenti.
 
 Che cosa ho osservato prima e dopo `git pull`, e perché non serve un nuovo clone:
+dopo "git pull" osservazioni.md viene aggiornato sul locale con la modifica eseguita online su Github;
+non serve un nuovo clone perché utilizzo il comando pull per aggiornare il locale, non ho bisogno di clonare di nuovo tutti i file che avevo già scaricato.
 
 ## Step 2 — Eco: prima prova
 
