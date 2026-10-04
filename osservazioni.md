@@ -21,10 +21,10 @@ Che cosa ho capito su sorgente ed eseguibile:
 Il sorgente è il file di testo che scrivo con Emacs e che contiene le istruzioni in linguaggio C. L’eseguibile viene creato dal compilatore a partire dal sorgente e, quando viene eseguito, permette di verificare il comportamento del programma attraverso i risultati prodotti.
 
 Output richiesto e comportamento del programma prima della modifica:
-prima della modifica gran parte del codice rimane commentato, quindi il codice compila ma non stampa nulla.
+prima della modifica il codice è commentato, quindi il programma compila ma non stampa nulla.
 
 Esito dopo la modifica e spiegazione della correzione:
-Dopo aver completato il TODO in hello.c, ho inserito la stampa del messaggio Hello, computational physics! seguito da una nuova riga, usando printf. Ho poi ricompilato il programma ed eseguito ./hello, verificando che l'output fosse esattamente quello richiesto, ossia  "Hello, computational physics!".
+Dopo aver completato il TODO in hello.c, e inserito la stampa del messaggio "Hello, computational physics!" seguito da una nuova riga, usando printf, ho ricompilato il programma ed eseguito ./hello, verificando che l'output fosse esattamente quello richiesto, ossia  "Hello, computational physics!".
 
 
 Risposta alle domande stimolo:  
@@ -78,7 +78,7 @@ Che cosa posso concludere: gli argomenti vengono passati al programma come testo
 Domande stimolo:
 
 Gli elementi di argv sono già numeri? Che differenza ti aspetti passando 0012 come primo oppure come secondo argomento?   
-No, gli elementi di `argv` sono stringhe e hanno bisogno di essere convertiti in interi e decimali. Se passiamo `0012` come primo argomento stampa il numero così come è perché viene salvato tutto in una stringa così come è, passandolo come secondo argomento invece viene stampato solo il numero `12` perché viene convertito in un intero.
+No, gli elementi di `argv` sono stringhe e hanno bisogno di essere convertiti in interi e decimali. Se passiamo `0012` come primo argomento stampa il numero così come è perché viene salvato tutto in una stringa, passandolo come secondo argomento invece viene stampato solo il numero `12` perché viene convertito in un intero.
 
 Come puoi passare un testo che contiene spazi mantenendolo come un solo argomento?
 Scrivendo tutta la parte di testo tra virgolette.
@@ -87,7 +87,7 @@ Se scrivi 1.25e1 come terzo argomento, quale valore ti aspetti in uscita? La rap
 Viene convertito nel valore `12.5`, quindi la scrittura cambia perché il valore viene convertito in un `double` e poi stampato con sei cifre dopo il punto decimale.
 
 Se un argomento manca o non rappresenta il tipo richiesto (ad esempio una stringa invece di un numero), che cosa ti aspetti dal programma?  
-Se manca un argomento, il programma stampa il messaggio di errore previsto dal codice. Se si utilizza un numero al posto del testo, viene stampato così come è. Se si inserisce del testo al posto di un numero, il programma segnala un errore. Se si mette un decimale al posto di un intero, la conversione dipende da come è definita la funzione di conversione; con le funzioni fornite dalla traccia, gli argomenti non validi vengono riconosciuti come errori. Se si mette un intero al posto del decimale, viene letto come valore reale e stampato con sei zeri dopo il punto.
+Se manca un argomento, il programma stampa il messaggio di errore previsto dal codice. Se si utilizza un numero al posto del testo, viene stampato così come è. Se si inserisce del testo al posto di un numero, il programma segnala un errore. Se si mette un decimale al posto di un intero, la parte decimale viene troncata, se si mette un intero al posto del decimale, viene letto come valore reale e stampato con sei zeri dopo il punto.
 
 Come distingui il risultato da un messaggio di errore?
 Si può distinguere osservando dove viene stampato: il risultato viene inviato a `stdout`, mentre il messaggio di errore viene inviato a `stderr`. Con `>` viene reindirizzato solo `stdout`, quindi il risultato finisce nel file mentre il messaggio di errore rimane nel terminale.
@@ -95,12 +95,6 @@ Si può distinguere osservando dove viene stampato: il risultato viene inviato a
 
 Nello step 2, oltre alle prove proposte, individua argc e argv in eco.c: perché il programma richiede argc == 4 pur ricevendo tre argomenti? Che cosa contiene argv[0]?    
 Il programma richiede `argc == 4` perché `argc` conta anche il nome del programma, oltre ai tre argomenti passati. `argv[0]` contiene quindi il nome o il percorso con cui è stato eseguito il programma, mentre `argv[1]`, `argv[2]` e `argv[3]` contengono i tre argomenti forniti dall'utente.
-
-
-Che cosa contiene eco.txt nei due casi?
-Perché nel secondo caso il messaggio d'errore compare ancora nel terminale? Individua nel sorgente le stampe su stdout e su stderr. Cosa viene rediretto da >?
-Quali codici di uscita osservi? Come potresti usarli in un controllo automatico?
-
 
 
 ## Step 2 — Eco: seconda prova
@@ -121,11 +115,18 @@ Nel primo caso il codice di uscita è 0, che indica il completamento regolare. N
 Eseguire il programma cambiando il terzo argomento:
 Non è necessario ricompilare se si cambia solo il valore del parametro passato al programma, perché il codice non viene modificato. Per cambiare la formula usata dal programma, invece, bisogna modificare il codice sorgente e quindi ricompilare.
 
-Previsioni per l'esecuzione con argomenti validi e per quella con `dodici`:
+Previsioni per l'esecuzione con argomenti validi e per quella con `dodici`:  
+Con ./eco ciao 12 3.5 il programma converte 12 in un int e 3.5 in un double, quindi stampa ciao 12 3.500000.
+Con ./eco ciao dodici 3.5, dodici non rappresenta un intero valido. La funzione leggi_intero riconosce l'errore e termina il programma.
+
 
 Contenuto di `eco.txt`, messaggi nel terminale e codici di uscita osservati:
+Nel primo caso eco.txt contiene: ciao 12 3.500000
+Nel terminale non compare il risultato del programma perché è stato rediretto nel file. Il codice di uscita è 0. Nel secondo caso eco.txt rimane vuoto, perché il programma termina prima di eseguire la printf. Nel terminale compare: "Il secondo argomento deve essere un intero in base 10."
+Il codice di uscita è 2.
 
 Come un controllo automatico può riconoscere un errore:
+Un controllo automatico può controllare il codice di uscita del programma. 0 indica che l'esecuzione è terminata regolarmente, mentre un valore diverso da 0, come 2, indica che si è verificato un errore. Il valore può essere controllato, ad esempio, con echo $? oppure utilizzato in uno script.
 
 ## Step 2 — Parametri e calcolo fisico
 
