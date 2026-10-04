@@ -1,6 +1,6 @@
 # Osservazioni — Esercitazione 0
 
-Gruppo:47
+Gruppo: 47
 
 Componenti (Veronica Dina Frajese, username:Frajese; Gaia Fioravanti, username:Gaia-06);
 
@@ -18,7 +18,7 @@ Comando di compilazione: Make
 Comando di esecuzione e risultato osservato: ./hello, il programma ha stampato "Hello, computational physics!"
 
 Che cosa ho capito su sorgente ed eseguibile:
-sorgente è il file di testo che io scrivo su emacs, l'eseguibile viene creato con il compilatore e se eseguito permette di controllare il funzionamento del codice.
+Il sorgente è il file di testo che scrivo con Emacs e che contiene le istruzioni in linguaggio C. L’eseguibile viene creato dal compilatore a partire dal sorgente e, quando viene eseguito, permette di verificare il comportamento del programma attraverso i risultati prodotti.
 
 Output richiesto e comportamento del programma prima della modifica:
 prima della modifica gran parte del codice rimane commentato, quindi il codice compila ma non stampa nulla.
