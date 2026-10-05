@@ -128,13 +128,16 @@ Il codice di uscita è 2.
 Come un controllo automatico può riconoscere un errore:
 Un controllo automatico può controllare il codice di uscita del programma. 0 indica che l'esecuzione è terminata regolarmente, mentre un valore diverso da 0, come 2, indica che si è verificato un errore. Il valore può essere controllato, ad esempio, con echo $? oppure utilizzato in uno script.
 
-MANCANTI
 ## Step 2 — Parametri e calcolo fisico
 
-Quando serve ricompilare e quando basta cambiare gli argomenti:
+Quando serve ricompilare e quando basta cambiare gli argomenti: è necessario ricompilare quando si cambia il codice sorgente (per es devi cambiare formula), basta cambiare gli argomenti quando serve solo modificare i valori dei parametri.
+
+Usando eco2.c:
+Vengono introdotti controlli più rigidi per identificare l'errore sull'inserimento dell'intero e del numero reale. Nel primo caso viene verificato che il numero sia un intero in base 10, nel secondo che sia un numero reale e che entrambi non siano troppo grandi o piccoli (evita l'overflow e l'underflow).
+
 
 ## Step 2 — Git
 
-Come riconosco nella cronologia i commit dei due step:
+Come riconosco nella cronologia i commit dei due step: 
 
 Come ho verificato che la versione finale sia presente su GitHub:
