@@ -128,7 +128,7 @@ Il codice di uscita è 2.
 Come un controllo automatico può riconoscere un errore:
 Un controllo automatico può controllare il codice di uscita del programma. 0 indica che l'esecuzione è terminata regolarmente, mentre un valore diverso da 0, come 2, indica che si è verificato un errore. Il valore può essere controllato, ad esempio, con echo $? oppure utilizzato in uno script.
 
-MANCANTI
+
 ## Step 2 — Parametri e calcolo fisico
 
 Quando serve ricompilare e quando basta cambiare gli argomenti:
