@@ -138,6 +138,7 @@ Vengono introdotti controlli più rigidi per identificare l'errore sull'inserime
 
 ## Step 2 — Git
 
-Come riconosco nella cronologia i commit dei due step: 
+Come riconosco nella cronologia i commit dei due step:
+Per controllare la cronologia su git si utilizza il comando git log --online -5, per controllare la cronologia su Github bisogna verificare l'elenco degli ultimi commit.
 
-Come ho verificato che la versione finale sia presente su GitHub:
+Come ho verificato che la versione finale sia presente su GitHub: Verificando che l'ultimo commit su git e github sia lo stesso. 
